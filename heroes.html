@@ -1,0 +1,48 @@
+<!-- Links and Imports -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/dota-icons.js"></script>
+<script src= "js/seedrandom.js"></script>
+
+<!-- Title and Icon-->
+<title>Dota Random Heroes</title>
+<link rel="icon" href="images/dota-icon.png">
+
+<!-- Body -->
+<body>
+        <h1>Dota 2 Random Drafting</h1>
+        <div style="width: 100%">
+            <div class="teamDiv teamA">
+                <h2>Heroes</h2>
+                <div class="dropZone" id="iconZone_A_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+                <h2>Picks</h2>
+                <div class="dropZone" id="iconZone_A_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+                <h2>Bans</h2>
+                <div class="dropZone" id="iconZone_A_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+            </div>
+            <div class="teamDiv teamB"> 
+                <h2>Heroes</h2>
+                <div class="dropZone" id="iconZone_B_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+                <h2>Picks</h2>
+                <div class="dropZone" id="iconZone_B_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+                <h2>Bans</h2>
+                <div class="dropZone" id="iconZone_B_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            distributeHeroes();
+        </script>
+</body>
