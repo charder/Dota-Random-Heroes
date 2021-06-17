@@ -151,29 +151,34 @@ function allowDrop(ev) {
     heroList.push({index: heroList.length, name: "Zeus", icon: "images/hero-icons/zeus.png"});
 
     var id = 0; 
-    var rolls = Math.ceil(heroList.length / 2);
     var teamA_pool = [];
     var teamB_pool = [];
     var teamA_poolDiv = document.getElementById("iconZone_A_0");
     var teamB_poolDiv = document.getElementById("iconZone_B_0");
 
+    // Obtain Seed ( ͡° ͜ʖ ͡°)
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     let seed = urlParams.get('seed');
     Math.seedrandom(seed);
 
+    // Random which team gets extra hero (in the event of uneven hero #)
+    var extraRoll = 0;
+    if (heroList.length % 2 != 0) {
+      extraRoll = Math.floor(Math.random() * 2);
+    }
+    var rolls = Math.ceil(heroList.length / 2) - extraRoll;
+
     // Split heroes into two groups.
     while (rolls > 0) {
-       var roll = Math.floor(Math.random() * (heroList.length));
+       var roll = Math.floor(Math.random() * heroList.length);
        teamA_pool.push(heroList[roll]);
        heroList.splice(roll, 1);
        rolls--;
-       id++;
     }
     while (heroList.length > 0) {
       teamB_pool.push(heroList[0]);
       heroList.shift();
-      id++;
     }
 
     // Sort the new arrays.
@@ -186,10 +191,10 @@ function allowDrop(ev) {
 
     // Push arrays to the hero lists.
     teamA_pool.forEach(function(element) {
-      teamA_poolDiv.innerHTML = teamA_poolDiv.innerHTML + `<img id="icon${element.index}" title="${element.name}" src="${element.icon}" draggable="true" ondragstart="drag(event)" width="96" height="54">`
+      teamA_poolDiv.innerHTML = teamA_poolDiv.innerHTML + `<img class="hero_icon" id="icon${element.index}" title="${element.name}" src="${element.icon}" draggable="true" ondragstart="drag(event)" width="96" height="54">`
     });
 
     teamB_pool.forEach(function(element) {
-      teamB_poolDiv.innerHTML = teamB_poolDiv.innerHTML + `<img id="icon${element.index}" title="${element.name}" src="${element.icon}" draggable="true" ondragstart="drag(event)" width="98" height="54">`
+      teamB_poolDiv.innerHTML = teamB_poolDiv.innerHTML + `<img class="hero_icon" id="icon${element.index}" title="${element.name}" src="${element.icon}" draggable="true" ondragstart="drag(event)" width="98" height="54">`
     });
   }

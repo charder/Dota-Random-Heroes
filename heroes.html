@@ -1,6 +1,6 @@
 <!-- Links and Imports -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/heroes.css">
 <script src="js/dota-icons.js"></script>
 <script src= "js/seedrandom.js"></script>
 
@@ -10,39 +10,41 @@
 
 <!-- Body -->
 <body>
-        <h1>Dota 2 Random Drafting</h1>
-        <div style="width: 100%">
-            <div class="teamDiv teamA">
-                <h2>Heroes</h2>
-                <div class="dropZone" id="iconZone_A_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
-                <h2>Picks</h2>
-                <div class="dropZone" id="iconZone_A_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
-                <h2>Bans</h2>
-                <div class="dropZone" id="iconZone_A_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
+    <h1 class="text-light">Dota 2 Random Drafting</h1>
+    <div style="width: 100%">
+        <div class="teamDiv teamA">
+            <h1 style="color: lightcoral"><u><b>Team A</b></u></h1>
+            <h2>Heroes</h2>
+            <div class="dropZone" id="iconZone_A_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
             </div>
-            <div class="teamDiv teamB"> 
-                <h2>Heroes</h2>
-                <div class="dropZone" id="iconZone_B_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
-                <h2>Picks</h2>
-                <div class="dropZone" id="iconZone_B_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
-                <h2>Bans</h2>
-                <div class="dropZone" id="iconZone_B_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    
-                </div>
+            <h2>Picks</h2>
+            <div class="dropZone" id="iconZone_A_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Bans</h2>
+            <div class="dropZone" id="iconZone_A_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
             </div>
         </div>
-        
-        <script>
-            distributeHeroes();
-        </script>
+        <div class="teamDiv teamB"> 
+            <h1 style="color: lightseagreen"><u><b>Team B</b></u></h1>
+            <h2>Heroes</h2>
+            <div class="dropZone" id="iconZone_B_0" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Picks</h2>
+            <div class="dropZone" id="iconZone_B_1" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Bans</h2>
+            <div class="dropZone" id="iconZone_B_2" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        distributeHeroes();
+    </script>
 </body>
