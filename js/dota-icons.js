@@ -14,6 +14,13 @@ function allowDrop(ev) {
 
   // BIG BOY
   function distributeHeroes() {
+    // Obtain Seed ( ͡° ͜ʖ ͡°)
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let seed = urlParams.get('seed');
+    let cm = urlParams.get('cm');
+    Math.seedrandom(seed);
+
     let heroList = [];
     // 1 - 10
     heroList.push({index: heroList.length, name: "Abaddon", icon: "images/hero-icons/abaddon.png"});
@@ -40,7 +47,9 @@ function allowDrop(ev) {
     // 21 - 30
     heroList.push({index: heroList.length, name: "Dark Seer", icon: "images/hero-icons/dark_seer.png"});
     heroList.push({index: heroList.length, name: "Dark Willow", icon: "images/hero-icons/dark_willow.png"});
-    heroList.push({index: heroList.length, name: "Dawnbreaker", icon: "images/hero-icons/dawnbreaker.png"});
+    if (cm == null || cm == "off") {
+      heroList.push({index: heroList.length, name: "Dawnbreaker", icon: "images/hero-icons/dawnbreaker.png"});
+    }
     heroList.push({index: heroList.length, name: "Dazzle", icon: "images/hero-icons/dazzle.png"});
     heroList.push({index: heroList.length, name: "Death Prophet", icon: "images/hero-icons/death_prophet.png"});
     heroList.push({index: heroList.length, name: "Disruptor", icon: "images/hero-icons/disruptor.png"});
@@ -155,12 +164,6 @@ function allowDrop(ev) {
     var teamB_pool = [];
     var teamA_poolDiv = document.getElementById("iconZone_A_0");
     var teamB_poolDiv = document.getElementById("iconZone_B_0");
-
-    // Obtain Seed ( ͡° ͜ʖ ͡°)
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    let seed = urlParams.get('seed');
-    Math.seedrandom(seed);
 
     // Random which team gets extra hero (in the event of uneven hero #)
     var extraRoll = 0;

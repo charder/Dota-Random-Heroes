@@ -7,3 +7,8 @@ body {
     background: rgb(10, 0, 40);
     text-align: center;
 }
+
+.form-check-input {
+    width: 2em;
+    height: 2em;
+}
